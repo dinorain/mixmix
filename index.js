@@ -10,14 +10,11 @@ var app = express();
 // Import the Anagrammatix game file.
 var agx = require('./agxgame');
 
-// Create a simple Express application
-app.configure(function() {
-    // Turn down the logging activity
-    app.use(express.logger('dev'));
+// Turn down the logging activity
+app.use(express.logger('dev'));
 
-    // Serve static html, js, css, and image files from the 'public' directory
-    app.use(express.static(path.join(__dirname,'public')));
-});
+// Serve static html, js, css, and image files from the 'public' directory
+app.use(express.static(path.join(__dirname,'public')));
 
 // Create a Node.js based http server on port 8080
 var server = require('http').createServer(app).listen(process.env.PORT || 8080);

@@ -63,7 +63,7 @@ function hostPrepareGame(data) {
 
     data.mySocketId = sock.id;
 
-    const domain = NODE_ENV == 'prod' ? 'https://fibbage-tribute-questions.herokuapp.com' : 'http://localhost:3000'
+    const domain = NODE_ENV == 'prod' ? 'https://mixmix-questions.herokuapp.com' : 'http://localhost:3000'
     const url = domain + '/question/random/' + Config.nbRounds + '?lan=' + data.language;
     console.log(url);
     request.get(url, (error, response, body) => {
@@ -214,7 +214,7 @@ function playerRestart(data) {
  */
 function sendQuestion(wordPoolIndex, gameId) {
     /*
-    const url = 'https://fibbage-tribute-questions.herokuapp.com/question/random?lan=' + Config.language;
+    const url = 'https://mixmix-questions.herokuapp.com/question/random?lan=' + Config.language;
     request.get(url, (error, response, body) => {
         if(error) {
             return console.dir(error);
